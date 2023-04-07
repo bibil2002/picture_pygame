@@ -38,8 +38,20 @@ def full_picture():
         for i in range(4):
             x = x_home - width_home/2 + i * glass_width + (i + 1) * proem_width
             rect(screen, light_gray, (x, y_home - height_home, glass_width, height_home/2.7))
+        # 3 нижних окна
+        glass_width = width_home/4
+
+        proem_width = width_home/16
+
+        rect(screen, brown,
+             (x_home - width_home / 2 + proem_width, y_home - height_home / 3, glass_width, height_home / 4))
+        rect(screen, brown,
+             (x_home - width_home / 2 + 2 * proem_width + glass_width, y_home - height_home / 3, glass_width, height_home / 4))
+        rect(screen, yellow,
+             (x_home - width_home / 2 + 3 * proem_width + 2 * glass_width, y_home - height_home / 3, glass_width, height_home / 4))
 
     home(794/2,1123/2,100,300) # тест
+
 
 
 
