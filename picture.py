@@ -27,9 +27,12 @@ def full_picture():
         """
         rect(screen, green,(x_home - width_home/2, y_home - height_home, width_home, height_home)) # кирпичи
 
+        polygon(screen, black, [(x_home - width_home/1.6, y_home - height_home), (x_home + width_home/1.6, y_home - height_home),    # крыша
+                                (x_home + width_home/2.2, y_home - height_home * 1.05), (x_home - width_home/2.2, y_home - height_home * 1.05)])
+
+    home(794/2,1123/2,100,300) # тест
 
 
-    home(794/2,1123/2,100,300)  # тестовый запуск
 
 full_picture()
 
