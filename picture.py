@@ -25,32 +25,60 @@ def full_picture():
         :param height_home:  без учета крыши и  труб(трубы вообще отдельной
         функцией пойдут)
         """
-        rect(screen, green,(x_home - width_home/2, y_home - height_home, width_home, height_home)) # кирпичи
+        rect(screen, green, (x_home - width_home / 2, y_home - height_home, width_home, height_home))  # кирпичи
 
-        polygon(screen, black, [(x_home - width_home/1.6, y_home - height_home), (x_home + width_home/1.6, y_home - height_home),    # крыша
-                                (x_home + width_home/2.2, y_home - height_home * 1.05), (x_home - width_home/2.2, y_home - height_home * 1.05)])
-        #верхние окна, их 4, ширина каждого width_home/8 => ширина проемов(их 5) width_home/10
+        polygon(screen, black,
+                [(x_home - width_home / 1.6, y_home - height_home), (x_home + width_home / 1.6, y_home - height_home),
+                 # крыша
+                 (x_home + width_home / 2.2, y_home - height_home * 1.05),
+                 (x_home - width_home / 2.2, y_home - height_home * 1.05)])
 
-        glass_width = width_home/8
+        # верхние окна, их 4, ширина каждого width_home/8 => ширина проемов(их 5) width_home/10
+        def windows():
+            glass_width = width_home / 8
 
-        proem_width = width_home/10
+            proem_width = width_home / 10
 
-        for i in range(4):
-            x = x_home - width_home/2 + i * glass_width + (i + 1) * proem_width
-            rect(screen, light_gray, (x, y_home - height_home, glass_width, height_home/2.7))
-        # 3 нижних окна
-        glass_width = width_home/4
+            for i in range(4):
+                x = x_home - width_home / 2 + i * glass_width + (i + 1) * proem_width
+                rect(screen, light_gray, (x, y_home - height_home, glass_width, height_home / 2.7))
+            # 3 нижних окна
+            glass_width = width_home / 4
 
-        proem_width = width_home/16
+            proem_width = width_home / 16
 
-        rect(screen, brown,
-             (x_home - width_home / 2 + proem_width, y_home - height_home / 3, glass_width, height_home / 4))
-        rect(screen, brown,
-             (x_home - width_home / 2 + 2 * proem_width + glass_width, y_home - height_home / 3, glass_width, height_home / 4))
-        rect(screen, yellow,
-             (x_home - width_home / 2 + 3 * proem_width + 2 * glass_width, y_home - height_home / 3, glass_width, height_home / 4))
+            rect(screen, brown,
+                 (x_home - width_home / 2 + proem_width, y_home - height_home / 3, glass_width, height_home / 4))
+            rect(screen, brown,
+                 (x_home - width_home / 2 + 2 * proem_width + glass_width, y_home - height_home / 3, glass_width,
+                  height_home / 4))
+            rect(screen, yellow,
+                 (x_home - width_home / 2 + 3 * proem_width + 2 * glass_width, y_home - height_home / 3, glass_width,
+                  height_home / 4))
 
-    home(794/2,1123/2,100,300) # тест
+        def balkon():
+            rect(screen, black,
+                 (x_home - width_home / 1.6, y_home - height_home / 2, 2 * width_home / 1.6, height_home / 9))
+
+            rect(screen, black,
+                 (x_home - width_home / 1.7, y_home - height_home / 1.5, 2 * width_home / 1.7, height_home / 15))
+
+            #столбы балкона их 5
+
+            stolb_width = 0.07 * width_home
+            proem_width = 0.14 * width_home
+            for i in range(5):
+                x =  x_home - width_home/ 1.7 + i * stolb_width +(i + 1)*proem_width
+                rect(screen, black, (x, y_home - height_home / 1.5, stolb_width,  0.15*(y_home - height_home)))
+
+
+        windows()
+        balkon()
+
+
+
+
+    home(794 / 2, 1123 / 2, 150, 200)  # тест
 
 
 
