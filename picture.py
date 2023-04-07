@@ -29,6 +29,15 @@ def full_picture():
 
         polygon(screen, black, [(x_home - width_home/1.6, y_home - height_home), (x_home + width_home/1.6, y_home - height_home),    # крыша
                                 (x_home + width_home/2.2, y_home - height_home * 1.05), (x_home - width_home/2.2, y_home - height_home * 1.05)])
+        #верхние окна, их 4, ширина каждого width_home/8 => ширина проемов(их 5) width_home/10
+
+        glass_width = width_home/8
+
+        proem_width = width_home/10
+
+        for i in range(4):
+            x = x_home - width_home/2 + i * glass_width + (i + 1) * proem_width
+            rect(screen, light_gray, (x, y_home - height_home, glass_width, height_home/2.7))
 
     home(794/2,1123/2,100,300) # тест
 
