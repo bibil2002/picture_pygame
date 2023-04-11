@@ -1,3 +1,4 @@
 # picture_pygame
-hello
+Рисунок
+
 
