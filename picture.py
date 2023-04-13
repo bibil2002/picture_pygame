@@ -13,8 +13,10 @@ yellow = (255, 255, 0)
 brown = (139, 69, 19)
 green = (128, 128, 0)
 balkon = (96,96,96)
+white =(255, 255, 255)
 def full_picture():
     rect(screen, dark_gray, (0,0, 794,500))  # небо
+    circle(screen, white, (600,200),100) # луна
 
     def home (x_home , y_home, width_home, height_home):
         """
@@ -74,6 +76,9 @@ def full_picture():
 
         windows()
         balkon()
+
+
+
 
 
 
